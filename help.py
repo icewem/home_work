@@ -1,105 +1,42 @@
-# выводим текст в красивый вид
-name = 'Artem'
-format_name = f'Привет {name}'
-print(format_name) 
-
-name = input('Введите ваше имя: ')
-print(f'Привет, {name}! Какое чудесное у тебя имя!')
-
-#Списки, задание.
-
-number_list =['3','5','7','9','10.5']
-print(number_list)
-number_list.append('Python')    # добавить в конец списка
-print(len(number_list))         # посчитать длинну списка   
-del number_list[2]              # удалить элемент под номером N+1(нумерация с 0)
-number_list.remove("3")         # удалить из списка элемент "3"
-print(number_list[0])           # вывод на экран 1й элемент списка
-print(number_list[-1])          # вывод на экран последний элемент списка
-print(number_list[1:5])         # вывод элементов со 2го по 4й включительно
-number_list.remove("Python")    # удалить из списка элемент "Python"
-
-# Dictionaries
-
-product = {
-    "name": "iPhone Xs",
-    "stock": 24,
-    "price": 65432.1
-}
-
-product["memory"] = 64          # добавить в product элемент 'memory' со значением '64'
-print(product['price'])         # вывести значение словоря 'product' элемента 'price'
-product.get("discount", 0)      
-
-print(product)
-
-city_list = {
-    "city": "Москва", 
-    "temperature": "20"
-    }
-
-print(city_list['city'])
-city_list["temperature"] = int(city_list["temperature"]) + 5
-print(city_list['temperature'])
-print(city_list.get("country"), "Россия") # Проверьте, есть ли в словаре ключ country
-city_list["data"] = "27.05.2019"
-print(city_list)
-
-# Создайте функцию get_summ(one, two, delimiter='&') которая принимает два парамтера,  и приводит их к строке и отдает объединеными через разделитель delimteter
+#####################################################################################################
+########### РАБОТА СО СПИСКОМ   #####################################################################
+#####################################################################################################
+a = []                          # создать пустой список.
+b = a[:] b = list(a) b = a.copy()   # создать копию а и положить в б
+a.append(3) a.append('добавим') # добавить в список а, значение ()
+b.remove(3)                     # удалить элемент из списка по точному имени (3)
+del c[2]                        # удалить элемент по индексу []
+d[1] = 17                       # изменить элемент с индексом [1]
+a[-1]                           # обращение к последнему элементу списка
+a[1:4]                          # получть список со 2го по 4й элемент (2-3-4)
+a.extend(b)                     # положить в словать а словать б
+a.insert(i, x)                  # Вставить  x в позицию i.
+a.remove(1)                     # Удаляет первое вхождение элемента x из списка.
+a.index(4)                      # Возвращает индекс элемента.
+print(a.count(2))               # возвращает число вхождений элемент 2 в список а.
+list.reverse()                  # Изменяет порядок расположения элементов в списке на обратный.
 
 
-def get_summ(one, two, delimiter='&'):
-    print(one,delimiter,two)
 
-get_summ(input(str("Введите параметр 1:")), input(str("Введите параметр 2:")))
+#####################################################################################################
+########### РАБОТА С СЛОВАРЕМ   #####################################################################
+#####################################################################################################
 
-# Вызовите функцию, пердав в нее два аргумента "Learn" и "python", положите результат в переменную и выведите ее значение на экран
-
-def get_summ(one, two, delimiter='&'):
-    result = one + delimiter + two
-    print(result)
-    
-get_summ("Learn","python")
-
-# Сделайте так, чтобы результирующая строка выводилась заглавными буквами
-
-def get_summ(one, two, delimiter='&'):
-    result = one + delimiter + two
-    print(result.upper())
-    
-get_summ("Learn","python")
-
-answers = {
-    'привет': "Привет!",
-    "как дела" : " Отлично, а у тебя?",
-    "пока" : "еще увидимся!"
-}
-
-def get_answer(question,answers):
-    return answers.get(question)
-
-def ask_user(answers):
-    while True:
-        try:
-            user_input = input("Скажи что-нибудь: ")
-            answer = get_answer(user_input,answers)
-            print(answer)
-            if user_input == 'пока':
-                break
-        except KeyboardInterrupt:
-            print('Good bye!')
-            break
-
-if if __name__ == "__main__":
-    ask_user(answers)
-
-#` приводим к списку
-marks = {
-    '2a': [5, 5, 4, 5, 3, 3, 2, 5, 4], 
-    '3b': [4, 5, 2, 5, 3]
-    }
+d = {}                          # создать пустой словарь.
+d = {'dict': 1, 'dictionary': 2}    # создать словарь со значениями.
+d = dict(short='dict', long='dictionary') # можно ещё так создать.
+d1["China"]="Beijing"           # добавить пару в словарь.
+d1["China"]                     # ссылкается на значение аргумента т.е. "Beijing".
+d1.items()                      # Возвращает элементы словаря (ключ, значение) в отформатированном виде.
+d1.keys()                       # возвращает значения ключа.
+d1.values()                     # Возвращает значения элементов словаря.
+del d2["A1"]                    # удалить ключь А1 из словаря.
+"A1" in d2                      # проверть наличие ключа А1 в словаре d2.
+d2.clear()                      # очистить словарь d2.
+d3 = d2.copy()                  # скопировать словарь.
+d.update{"a1": a2}              # Обновить словарь парами (key/value) из other, 
+                                # если ключи уже существуют, то обновить их значения.
 
 
-for class_name,class_marks in marks.items():
-    a = sum(class_marks)
-    print(class_name,a)
+
+
