@@ -94,10 +94,10 @@ def count_repeat(school_students):
   return dict_result
 
 for check_class in school_students:
-  a = count_repeat(check_class)
+  pop_name = count_repeat(check_class)
   max_repeat = 0
   clas_num += 1
-  for name_student, num_repeat in a.items():
+  for name_student, num_repeat in pop_name.items():
       if num_repeat > max_repeat:
           max_repeat = num_repeat
           max_repeat_student = name_student
