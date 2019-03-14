@@ -118,17 +118,16 @@ is_male = {
 # В классе 2a 2 девочки и 0 мальчика.
 # В классе 3c 0 девочки и 2 мальчика.
 
-for class_list in school:
-  man = 0
-  not_man = 0
-  for student_name in class_list['students']:
+for class_info in school:
+  male = 0
+  female = 0
+  for student_name in class_info['students']:
     name = student_name['first_name']
     if name in is_male and is_male[name] == False:
-      not_man += 1
+      female += 1
     if name in is_male and is_male[name] == True:
-      man += 1
-  print(f"В классе {class_list['class']} {not_man} девочки и {man} мальчиков")
-
+      male += 1
+  print(f"В классе {class_info['class']} {female} девочки и {male} мальчиков")
 
 # Задание 5
 # По информации о учениках разных классов нужно найти класс, в котором больше всего девочек и больше всего мальчиков.
