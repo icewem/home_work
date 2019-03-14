@@ -1,11 +1,11 @@
 # Задание 1
 # Дан список учеников, нужно посчитать количество повторений каждого имени ученика.
 students = [
-  {'first_name': 'Вася'},
-  {'first_name': 'Петя'},
-  {'first_name': 'Маша'},
-  {'first_name': 'Маша'},
-  {'first_name': 'Петя'},
+      {'first_name': 'Вася'},
+      {'first_name': 'Петя'},
+      {'first_name': 'Маша'},
+      {'first_name': 'Маша'},
+      {'first_name': 'Петя'},
 ]
 
 # Пример вывода:
@@ -77,11 +77,31 @@ school_students = [
     {'first_name': 'Оля'},
   ]
 ]
-# ???
 
 # Пример вывода:
 # Самое частое имя в классе 1: Вася
 # Самое частое имя в классе 2: Маша
+
+clas_num = 0
+
+def count_repeat(school_students):
+  dict_result = {}
+  for student_data in check_class:
+    if student_data['first_name'] in dict_result:
+      dict_result[student_data['first_name']] += 1
+    else:
+      dict_result[student_data['first_name']] = 1
+  return dict_result
+
+for check_class in school_students:
+  a = count_repeat(check_class)
+  max_repeat = 0
+  clas_num += 1
+  for name_student, num_repeat in a.items():
+      if num_repeat > max_repeat:
+          max_repeat = num_repeat
+          max_repeat_student = name_student
+  print(f'Самое частое имя в {clas_num} классе:{max_repeat_student}')
 
 
 # Задание 4
